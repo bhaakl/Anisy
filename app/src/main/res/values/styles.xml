@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<!--    bottom nav menu-->
+    <style name="BottomNavigationViewWithIndicator" parent="Widget.Material3.BottomNavigationView">
+<!--        <item name="background">@color/white</item>-->
+        <item name="itemBackground">@drawable/bottom_nav_item_background</item>
+        <item name="itemIconTint">@drawable/bottom_nav_item_selector</item>
+        <item name="itemRippleColor">@color/my_color_sky</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+    <style name="BottomNavigationViewNoFrame" parent="Widget.Design.BottomNavigationView">
+        <item name="itemBackground">@android:color/transparent</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+    <style name="Widget.App.BottomNavigationView" parent="Widget.Material3.BottomNavigationView">
+        <item name="itemIconTint">@color/nmenu_selector_icon_color</item>
+        <item name="itemTextColor">@color/nmenu_selector_text_color</item>
+    </style>
+
+</resources>
