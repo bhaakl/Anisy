@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".signup">
+    tools:context=".ui.signup">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -83,6 +83,23 @@
                     app:layout_constraintTop_toBottomOf="@+id/fio" />
 
                 <EditText
+                    android:id="@+id/bday"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/edit_text_background"
+                    android:drawableStart="@drawable/ic_baseline_email_24"
+                    android:drawablePadding="8dp"
+                    android:ems="10"
+                    android:hint="Дата рождения"
+                    android:inputType="textPersonName"
+                    android:padding="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/className" />
+
+                <EditText
                     android:id="@+id/email1"
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
@@ -95,9 +112,9 @@
                     android:inputType="textPersonName"
                     android:padding="8dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/className" />
+                    app:layout_constraintTop_toBottomOf="@+id/bday" />
 
                 <EditText
                     android:id="@+id/password1"

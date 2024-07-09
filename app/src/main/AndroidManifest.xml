@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -14,31 +15,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NewsApp"
         tools:targetApi="31">
-        <!--<activity
-            android:name=".Favourite"
-            android:exported="false" />-->
-        <!--<activity
-            android:name=".ForgotPass"
-            android:exported="false" />-->
         <activity
-            android:name=".login"
+            android:name=".ui.login"
             android:exported="true" />
         <activity
-            android:name=".signup"
+            android:name=".ui.signup"
             android:exported="false" />
-        <!--<activity
-            android:name=".Summarizer"
-            android:exported="false"
-            android:parentActivityName=".MainActivity" />-->
         <activity
-            android:name=".AboutUs"
+            android:name=".ui.AboutUs"
             android:exported="false"
-            android:parentActivityName=".ProfileActivity" />
+            android:parentActivityName=".ui.ProfileActivity" />
         <!--<activity
             android:name=".webView"
             android:exported="false" />-->
         <activity
-            android:name=".splashActivity"
+            android:name=".ui.splashActivity"
             android:exported="true"
             android:theme="@style/Theme.NewsApp">
             <intent-filter>
@@ -47,18 +38,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--<activity
-            android:name=".DetailsView"
-            android:exported="false"
-            android:parentActivityName=".MainActivity" />-->
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true" />
         <activity
-            android:name=".PickEventActivity"
+            android:name=".ui.PickEventActivity"
             android:exported="true"/>
         <activity
-            android:name=".ProfileActivity"
+            android:name=".ui.ProfileActivity"
             android:exported="true"/>
         <meta-data
             android:name="preloaded_fonts"

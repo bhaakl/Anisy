@@ -22,4 +22,13 @@ interface UserQuery {
 
     @Query("SELECT * FROM User WHERE id = :userId")
     fun getUserById(userId: Int): Flow<User>
+
+    @Query("SELECT * FROM User WHERE email = :email")
+    fun getUserByEmail(email: String): Flow<User?>
+
+    @Query("UPDATE User SET is_liked = :isLiked WHERE email = :email")
+    suspend fun updateIsLiked(email: String, isLiked: Boolean)
+
+    @Query("SELECT id FROM User WHERE email = :email")
+    suspend fun getUserIdByEmail(email: String): Int?
 }

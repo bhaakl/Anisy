@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/my_bg_color"
     android:orientation="vertical"
-    tools:context=".PickEventActivity">
+    tools:context=".ui.PickEventActivity">
 
     <include layout="@layout/header_base_layout" />
 

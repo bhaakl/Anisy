@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/my_bg_color"
     android:orientation="vertical"
-    tools:context=".ProfileActivity">
+    tools:context=".ui.ProfileActivity">
 
     <include layout="@layout/header_base_layout" />
 
@@ -88,6 +88,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
+                        android:id="@+id/profileFio"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/montserratbold"
