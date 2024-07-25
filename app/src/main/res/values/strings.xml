@@ -1,6 +1,24 @@
 <resources>
-    <string name="app_name">Гимназия №21</string>
+    <string name="app_name">Animesh</string>
     <string name="api_key">23d877dbfbeb494cb1c656bd7fde770a</string>
+
+    <string name="no_internet">Please check your internet connection</string>
+    <string name="network_error">Network error, could\'t get data, please try again!</string>
+    <string name="unexpected_error">Unexpected error. Please try again later.</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >4 characters</string>
+    <string name="invalid_username_and_password">please check your username and password</string>
+    <string name="search_error">there is no such news name</string>
+
+    <string name="news_details_preview">This is the news details, som/e text to test the appearance of the view</string>
+    <string name="news_title_preview">This is the recipe name</string>
+    <string name="news_headline_preview">This is the recipe headline name</string>
+    <string name="news">News</string>
+
+    <string name="no_data">No Data</string>
+    <string name="read_more">Read more</string>
+    <string name="read_less">Read less</string>
+
     <string name="open">Open Navigation Drawer</string>
     <string name="close">Close Navigation Drawer</string>
     <string name="login">login</string>
@@ -11,7 +29,6 @@
     <string name="back"><![CDATA[<-]]></string>
     <string name="forward"><![CDATA[->]]></string>
     <string name="class_name_str">8 \"Б\"</string>
-    <string name="about_title1">Место нахождения образовательной организации (основное здание):</string>
     <string name="about_paragraph1">163002, город Архангельск, улица Урицкого, 9</string>
     <string name="about_title2">Спортзал:</string>
     <string name="about_paragraph2">163002, город Архангельск, проспект Ломоносова , 30</string>

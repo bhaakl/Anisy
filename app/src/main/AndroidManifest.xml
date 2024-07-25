@@ -16,20 +16,20 @@
         android:theme="@style/Theme.NewsApp"
         tools:targetApi="31">
         <activity
-            android:name=".ui.login"
+            android:name=".ui.component.login.login"
             android:exported="true" />
         <activity
-            android:name=".ui.signup"
+            android:name=".ui.component.login.signup"
             android:exported="false" />
         <activity
-            android:name=".ui.AboutUs"
+            android:name=".ui.component.profile.AboutUs"
             android:exported="false"
-            android:parentActivityName=".ui.ProfileActivity" />
+            android:parentActivityName=".ui.component.profile.ProfileActivity" />
         <!--<activity
             android:name=".webView"
             android:exported="false" />-->
         <activity
-            android:name=".ui.splashActivity"
+            android:name=".ui.component.splash.splashActivity"
             android:exported="true"
             android:theme="@style/Theme.NewsApp">
             <intent-filter>
@@ -39,13 +39,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.MainActivity"
-            android:exported="true" />
+            android:name=".ui.component.newsland.NewsActivity" />
         <activity
-            android:name=".ui.PickEventActivity"
+            android:name=".ui.component.details.DetailsActivity" />
+
+        <activity
+            android:name=".ui.component.schedule.PickEventActivity"
             android:exported="true"/>
         <activity
-            android:name=".ui.ProfileActivity"
+            android:name=".ui.component.profile.ProfileActivity"
             android:exported="true"/>
         <meta-data
             android:name="preloaded_fonts"

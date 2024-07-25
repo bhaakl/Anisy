@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/my_bg_color"
     android:orientation="vertical"
-    tools:context=".ui.PickEventActivity">
+    tools:context=".ui.component.schedule.PickEventActivity">
 
     <include layout="@layout/header_base_layout" />
 
@@ -20,7 +20,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintTop_toBottomOf="@+id/header_layout"
         app:strokeColor="@color/my_cardstroke_color"
         tools:ignore="MissingConstraints">
 

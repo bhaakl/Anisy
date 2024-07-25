@@ -6,12 +6,12 @@
     android:layout_height="match_parent"
     android:background="@color/my_bg_color"
     android:orientation="vertical"
-    tools:context=".ui.ProfileActivity">
+    tools:context=".ui.component.profile.ProfileActivity">
 
     <include layout="@layout/header_base_layout" />
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardViewAbout"
+        android:id="@+id/cv_details"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="10dp"
@@ -23,7 +23,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintTop_toBottomOf="@+id/header_layout"
         app:layout_constraintVertical_bias="0.0"
         app:strokeColor="@color/my_cardstroke_color"
         tools:ignore="MissingConstraints">
