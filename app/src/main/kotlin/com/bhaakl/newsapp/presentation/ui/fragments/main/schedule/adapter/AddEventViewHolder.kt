@@ -1,4 +1,4 @@
-package com.bhaakl.newsapp.presentation.ui.component.schedule.adapter
+package com.bhaakl.newsapp.presentation.ui.fragments.main.schedule.adapter
 
 import android.view.View
 import android.widget.TextView

@@ -10,9 +10,9 @@
     <string name="invalid_username_and_password">please check your username and password</string>
     <string name="search_error">there is no such news name</string>
 
-    <string name="news_details_preview">This is the news details, som/e text to test the appearance of the view</string>
-    <string name="news_title_preview">This is the recipe name</string>
-    <string name="news_headline_preview">This is the recipe headline name</string>
+    <string name="news_details_preview">This is the post details, som/e text to test the appearance of the view</string>
+    <string name="news_title_preview">This is the post name</string>
+    <string name="news_headline_preview">This is the post headline name</string>
     <string name="news">News</string>
 
     <string name="no_data">No Data</string>
@@ -53,4 +53,10 @@
     <string name="class_paragraph2_1">О-проведении-Всероссийского-социологического-диктанта.pdf</string>
     <string name="sc_title1">15 апреля будет проводиться пробник по русскому языку!</string>
     <string name="sc_paragraph1">Приходить в 9.00 к 12 кабинету, с собой иметь паспорт, черные гелиевые ручки!</string>
+
+
+    <string name="anime_aired">Aired: %1$s</string>
+    <string name="page_title">Animesh</string>
+    <string name="more">More\n</string>
+    <string name="favorite">Favorites</string>
 </resources>

@@ -1,66 +1,30 @@
-package com.bhaakl.newsapp.presentation.ui.component.profile
+package com.bhaakl.newsapp.presentation.ui.fragments.main.profile
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.bhaakl.newsapp.R
-import com.bhaakl.newsapp.databinding.ActivityProfileBinding
-import com.bhaakl.newsapp.ui.component.schedule.PickEventActivity
-import com.bhaakl.newsapp.ui.component.login.LoginViewModel
-import com.bhaakl.newsapp.ui.component.newsland.NewsActivity
-import com.bhaakl.newsapp.ui.component.login.login
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.bhaakl.newsapp.databinding.FragmentProfileBinding
+import com.bhaakl.newsapp.presentation.extensions.navigateSafely
+import com.bhaakl.newsapp.presentation.ui.fragments.login.LoginViewModel
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class ProfileActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityProfileBinding
+class ProfileFragment : Fragment(R.layout.fragment_profile) {
+    private val binding by viewBinding(FragmentProfileBinding::bind)
     private lateinit var auth: FirebaseAuth
     private val viewModel: LoginViewModel by viewModels()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityProfileBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        window.navigationBarColor = ContextCompat.getColor(this, R.color.black)
-
         auth = FirebaseAuth.getInstance()
-        val user = auth.currentUser
-        if (user == null) {
-            startActivity(Intent(applicationContext, login::class.java))
-            finish()
-        }
-
-        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
-        bottomNavigationView?.selectedItemId = R.id.navigation_profile
-
-        bottomNavigationView?.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.navigation_home -> {
-                    startActivity(Intent(this@ProfileActivity, NewsActivity::class.java))
-                    true
-                }
-
-                R.id.navigation_eventpick -> {
-                    startActivity(Intent(this@ProfileActivity, PickEventActivity::class.java))
-                    true
-                }
-
-                R.id.navigation_profile -> {
-                    true
-                }
-
-                else -> false
-            }
-        }
 
         //Profile
         val profileSlug = binding.profileSlug
@@ -71,7 +35,7 @@ class ProfileActivity : AppCompatActivity() {
             viewModel.getUserData(auth.currentUser?.email.toString()).collect { userData ->
                 if (userData != null) {
                     Log.e(
-                        "MainViewModel.getUserData",
+                        "ViewModel.getUserData",
                         "user -> ${userData["fio"]}; ${userData["role"]}"
                     )
                     profileInfoClassname.visibility = if (userData["role"].equals("TEACHER")) {
@@ -101,17 +65,15 @@ class ProfileActivity : AppCompatActivity() {
             inSetting.visibility = View.VISIBLE
         }
 
-        val contactInfoBtn = binding.contactInfoBtn
+        /*val contactInfoBtn = binding.contactInfoBtn
         contactInfoBtn.setOnClickListener {
             startActivity(Intent(this, AboutUs::class.java))
-        }
+        }*/
 
         //in setting
         val signoutBtn = binding.signoutBtn
         signoutBtn.setOnClickListener {
-            auth.signOut()
-            startActivity(Intent(this, login::class.java))
-            finish()
+            findNavController().navigateSafely(R.id.action_ProfileFragment_to_signInFragment)
         }
 
     }

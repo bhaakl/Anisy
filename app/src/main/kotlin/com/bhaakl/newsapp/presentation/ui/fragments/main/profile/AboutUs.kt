@@ -1,15 +1,8 @@
-package com.bhaakl.newsapp.presentation.ui.component.profile
+package com.bhaakl.newsapp.presentation.ui.fragments.main.profile
 
-import android.content.Intent
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import com.bhaakl.newsapp.R
-import com.bhaakl.newsapp.databinding.ActivityAboutUsBinding
-import com.bhaakl.newsapp.ui.component.schedule.PickEventActivity
-import com.bhaakl.newsapp.ui.component.newsland.NewsActivity
-import com.google.android.material.bottomnavigation.BottomNavigationView
+/*
 
-class AboutUs : AppCompatActivity() {
+class AboutUsFragment : Fragment(R.id.aboutUsFragment) {
 
     private lateinit var binding: ActivityAboutUsBinding
 
@@ -43,4 +36,4 @@ class AboutUs : AppCompatActivity() {
 
         //contact info
     }
-}
+}*/

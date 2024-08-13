@@ -7,7 +7,7 @@
     />
 
     <item
-        android:id="@+id/navigation_eventpick"
+        android:id="@+id/navigation_schedule"
         android:icon="@drawable/ic_my_calendar"
         android:title="Events"
     />

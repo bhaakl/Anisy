@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/my_color_700"
-    tools:context=".ui.component.splash.splashActivity">
+    tools:context=".presentation.ui.fragments.splash.SplashFragment">
 
     <ImageView
         android:id="@+id/spImg"

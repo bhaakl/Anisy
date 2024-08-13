@@ -13,4 +13,5 @@
     <dimen name="space_48x">48dp</dimen>
     <dimen name="space_64x">64dp</dimen>
     <dimen name="space_96x">96dp</dimen>
+    <dimen name="cardview_radius_dimen">0dp</dimen>
 </resources>

@@ -15,40 +15,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NewsApp"
         tools:targetApi="31">
+
         <activity
-            android:name=".ui.component.login.login"
-            android:exported="true" />
-        <activity
-            android:name=".ui.component.login.signup"
-            android:exported="false" />
-        <activity
-            android:name=".ui.component.profile.AboutUs"
-            android:exported="false"
-            android:parentActivityName=".ui.component.profile.ProfileActivity" />
-        <!--<activity
-            android:name=".webView"
-            android:exported="false" />-->
-        <activity
-            android:name=".ui.component.splash.splashActivity"
+            android:name=".presentation.ui.activity.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.NewsApp">
+            android:windowSoftInputMode = "adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.component.newsland.NewsActivity" />
-        <activity
-            android:name=".ui.component.details.DetailsActivity" />
-
-        <activity
-            android:name=".ui.component.schedule.PickEventActivity"
-            android:exported="true"/>
-        <activity
-            android:name=".ui.component.profile.ProfileActivity"
-            android:exported="true"/>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

@@ -10,8 +10,42 @@
     </style>
 
     <style name="BottomNavigationViewNoFrame" parent="Widget.Design.BottomNavigationView">
-        <item name="itemBackground">@android:color/transparent</item>
+        <item name="itemBackground">@android:color/background_light</item>
         <item name="elevation">0dp</item>
+    </style>
+
+    <style name="AppTheme.Title.Collapsed" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="AppTheme.Title.Expanded" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="android:textSize">48sp</item>
+    </style>
+
+    <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <item name="android:textColorSecondary">#61C555</item>
+        <item name="android:editTextColor">@color/black</item>
+    </style>
+
+    <style name="AppTheme.FloatingActionButton" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="android:padding">0dp</item>
+        <item name="backgroundTint">@android:color/white</item>
+        <item name="tint">@android:color/black</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.AppTheme.SmallComponent</item>
+    </style>
+
+    <style name="ShapeAppearance.AppTheme.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="strokeWidth">@null</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">200dp</item>
+    </style>
+
+    <style name="SnackbarButtonStyle" parent="Widget.Material3.Button.TextButton.Snackbar">
+        <item name="backgroundTint">@color/my_color_orange </item>
+        <item name="strokeColor">@color/my_color_sky</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <!-- Другие атрибуты, которые ты хочешь изменить -->
     </style>
 
 </resources>

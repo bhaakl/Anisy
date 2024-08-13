@@ -6,6 +6,7 @@ plugins {
     id 'kotlin-parcelize'
     id 'com.google.dagger.hilt.android'
     id 'org.jetbrains.kotlin.plugin.serialization'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
@@ -70,18 +71,24 @@ dependencies {
 
     // UI Components
     implementation "androidx.constraintlayout:constraintlayout:2.1.4"
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
 
     // Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    // ViewBindingPropertyDelegate | | To use only without reflection variants of viewBinding
+    implementation "com.github.kirich1409:viewbindingpropertydelegate-noreflection:1.5.6"
 
     // kotlin
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.1")
-    implementation "androidx.core:core-ktx:1.13.1"
-    implementation("androidx.activity:activity-ktx:1.9.0")
+    implementation("androidx.core:core-ktx:1.13.1")
+    implementation("androidx.activity:activity-ktx:$activity_version")
 
     // Coroutine Lifecycle Scopes
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.3")
+//    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine_ktx")
+//    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_ktx")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version")
 
     // db and auth
     implementation "com.google.firebase:firebase-auth-ktx:22.0.0"
@@ -102,6 +109,10 @@ dependencies {
 //    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.3")
 
+    // paging
+    api("androidx.paging:paging-runtime-ktx:3.3.1")
+    implementation 'androidx.paging:paging-common-android:3.3.1'
+
     // Hilt
     implementation "com.google.dagger:hilt-android:$hilt_version"
     ksp "com.google.dagger:hilt-android-compiler:$hilt_version"
@@ -109,10 +120,15 @@ dependencies {
 //    androidTestImplementation "com.google.dagger:hilt-android-testing:$hilt_version"
 //    kspAndroidTest "com.google.dagger:hilt-android-compiler:$hilt_version"
 
+    // mapping
+    implementation 'org.mapstruct:mapstruct:1.5.5.Final'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
+    // for test
+//    testAnnotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
+
     // other
     implementation "com.facebook.shimmer:shimmer:0.5.0"
     implementation "com.squareup.picasso:picasso:$picassoVersion"
     implementation 'com.ms-square:expandableTextView:0.1.4'
-    // ViewBindingPropertyDelegate | | To use only without reflection variants of viewBinding
-    implementation "com.github.kirich1409:viewbindingpropertydelegate-noreflection:1.5.6"
+
 }
