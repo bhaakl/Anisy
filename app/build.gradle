@@ -17,19 +17,21 @@ android {
         targetSdk rootProject.targetSdkVersion
         versionCode 1
         versionName "1.0"
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments += [
-                        "room.schemaLocation": "$projectDir/schemas".toString(),
-                        "room.incremental"   : "true"
-                ]
-            }
-        }
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         ndk {
             abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
         }
 
+        // env
+//        buildConfigField("String", "YOUTUBE_API_KEY", "\"${System.getenv("YOUTUBE_API_KEY") ?: ""}\"")
+        buildConfigField("String", "YOUTUBE_API_KEY", "\"${getProperties("YOUTUBE_API_KEY")}\"")
+
+    }
+
+    packagingOptions {
+        exclude 'META-INF/INDEX.LIST'
+        exclude 'META-INF/DEPENDENCIES'
     }
 
     buildTypes {
@@ -42,29 +44,43 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
+
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8
+        jvmTarget = JavaVersion.VERSION_17
     }
 
     buildFeatures {
+        buildConfig = true
         viewBinding true
     }
+
+    /*hilt {
+        enableAggregatingTask = true
+    }*/
+
     namespace 'com.bhaakl.newsapp'
 }
 
 ksp {
     arg("room.schemaLocation", "$projectDir/schemas")
+    arg("room.incremental", "true")
 //    arg("dagger.hilt.android.internal.disableAndroidSuperclassValidation", "true")
+}
+
+def getProperties(String key) {
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+    return properties.getProperty(key)
 }
 
 dependencies {
     // android support
     implementation "androidx.appcompat:appcompat:1.7.0"
-//    implementation "androidx.compose.ui:ui-text-android:1.6.8"
 
     // Material Design Components
     implementation "com.google.android.material:material:1.12.0"
@@ -72,6 +88,11 @@ dependencies {
     // UI Components
     implementation "androidx.constraintlayout:constraintlayout:2.1.4"
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation 'com.ms-square:expandableTextView:0.1.4'
+    implementation("androidx.viewpager2:viewpager2:1.1.0")
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0'
+    implementation "com.github.lisawray.groupie:groupie:2.10.1"
+    implementation "com.github.lisawray.groupie:groupie-viewbinding:2.10.1"
 
     // Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
@@ -79,14 +100,13 @@ dependencies {
     // ViewBindingPropertyDelegate | | To use only without reflection variants of viewBinding
     implementation "com.github.kirich1409:viewbindingpropertydelegate-noreflection:1.5.6"
 
-    // kotlin
+    // core/kotlin
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.1")
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.activity:activity-ktx:$activity_version")
 
     // Coroutine Lifecycle Scopes
-//    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine_ktx")
-//    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_ktx")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version")
 
@@ -110,8 +130,9 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.3")
 
     // paging
-    api("androidx.paging:paging-runtime-ktx:3.3.1")
-    implementation 'androidx.paging:paging-common-android:3.3.1'
+    api("androidx.paging:paging-runtime-ktx:$paging_version")
+    implementation "androidx.paging:paging-common-android:$paging_version"
+
 
     // Hilt
     implementation "com.google.dagger:hilt-android:$hilt_version"
@@ -129,6 +150,6 @@ dependencies {
     // other
     implementation "com.facebook.shimmer:shimmer:0.5.0"
     implementation "com.squareup.picasso:picasso:$picassoVersion"
-    implementation 'com.ms-square:expandableTextView:0.1.4'
+    implementation 'com.google.apis:google-api-services-youtube:v3-rev20240814-2.0.0'
 
 }

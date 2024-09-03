@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".presentation.ui.fragments.details.DetailsFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appl_actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:fitsSystemWindows="false"
+        app:liftOnScroll="true">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            app:layout_scrollEffect="compress"
+            app:layout_scrollFlags="scroll|enterAlways|exitUntilCollapsed"
+            app:menu="@menu/top_app_bar"
+            app:navigationIcon="@drawable/ic_arrow_back_24"
+            app:title="@string/page_title"
+            app:titleCentered="true" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nl_details_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_16x"
+                android:layout_marginTop="@dimen/space_16x"
+                android:layout_marginEnd="@dimen/space_16x"
+                android:layout_marginBottom="@dimen/space_8x"
+                android:text="@string/news_title_preview"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textStyle="bold"
+                android:typeface="monospace" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_details"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/space_16x"
+                android:backgroundTint="@color/white"
+                android:orientation="vertical"
+                app:cardCornerRadius="@dimen/cardview_radius_dimen"
+                app:cardElevation="4dp"
+                app:strokeColor="@color/my_cardstroke_color"
+                app:strokeWidth="0dp"
+                tools:ignore="MissingConstraints">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/space_8x"
+                    android:paddingBottom="@dimen/space_8x">
+
+                    <TextView
+                        android:id="@+id/tv_headline"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_16x"
+                        android:layout_marginEnd="@dimen/space_16x"
+                        android:text="@string/news_headline_preview"
+                        android:textSize="@dimen/font_16x"
+                        android:textStyle="bold" />
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/vp2_gallery"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/image_details_height"
+                        android:layout_marginTop="@dimen/space_16x" />
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/vp2_gallery_tabs"
+                        style="@style/AppTheme.TabLayoutStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/space_8x"
+                        android:layout_marginBottom="@dimen/space_16x"
+                        app:tabGravity="center"
+                        app:tabIndicatorFullWidth="true"
+                        app:tabIndicatorGravity="bottom"
+                        app:tabMode="scrollable" />
+
+                    <!--<TextView
+                        android:id="@+id/tv_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/space_16x"
+                        android:textSize="@dimen/font_16x"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:text="@string/news_details_preview" />-->
+
+                    <TextView
+                        android:id="@+id/tv_about_anime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_16x"
+                        android:layout_marginEnd="@dimen/space_16x"
+                        android:layout_marginBottom="@dimen/space_8x"
+                        android:text="@string/tv_anime_about"
+                        android:textSize="@dimen/font_16x"
+                        android:textStyle="bold" />
+
+                    <com.ms.square.android.expandabletextview.ExpandableTextView
+                        android:id="@+id/tv_synopsis"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_16x"
+                        android:layout_marginEnd="@dimen/space_16x"
+                        android:textSize="@dimen/font_16x"
+                        app:animDuration="200">
+
+                        <TextView
+                            android:id="@id/expandable_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#666666"
+                            android:textSize="@dimen/font_16x" />
+
+                        <ImageButton
+                            android:id="@+id/expand_collapse"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right|bottom"
+                            android:background="@android:color/transparent"
+                            android:contentDescription="More/Less"
+                            android:padding="16dp"
+                            tools:ignore="RtlHardcoded" />
+
+                    </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+                </LinearLayout>
+
+                <ProgressBar
+                    android:id="@+id/pb_loading"
+                    style="?android:attr/progressBarStyleLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="true"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

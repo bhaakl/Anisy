@@ -29,7 +29,6 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         //Profile
         val profileSlug = binding.profileSlug
         val profileFio = binding.profileFio
-        val profileInfoClassname = binding.profileInfoClassname
         val profileInfoBirthday = binding.profileInfoBirthday
         lifecycleScope.launch {
             viewModel.getUserData(auth.currentUser?.email.toString()).collect { userData ->
@@ -38,12 +37,6 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
                         "ViewModel.getUserData",
                         "user -> ${userData["fio"]}; ${userData["role"]}"
                     )
-                    profileInfoClassname.visibility = if (userData["role"].equals("TEACHER")) {
-                        View.GONE
-                    } else {
-                        profileInfoClassname.text = userData["className"]
-                        View.VISIBLE
-                    }
                     profileInfoBirthday.text = userData["birthday"]
                     profileSlug.text = userData["slugProfile"]
                     profileFio.text = userData["fio"]

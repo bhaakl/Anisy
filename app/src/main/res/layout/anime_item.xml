@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_anime_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/space_8x"
+    android:backgroundTint="@color/white"
+    app:cardCornerRadius="@dimen/cardview_radius_dimen"
+    app:cardElevation="4dp"
+    app:strokeWidth="0dp"
+    app:strokeColor="@color/my_cardstroke_color"
+    tools:ignore="MissingConstraints">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="13dp"
+        android:paddingBottom="13dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/space_8x"
+                android:layout_marginStart="@dimen/space_16x"
+                android:layout_marginEnd="@dimen/space_16x"
+                android:text="@string/news_title_preview"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_24x"
+                android:textStyle="bold"
+                android:typeface="monospace" />
+
+            <com.ms.square.android.expandabletextview.ExpandableTextView
+                android:id="@+id/tv_caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_16x"
+                android:layout_marginEnd="@dimen/space_16x"
+                app:animDuration="200"
+                app:maxCollapsedLines="6">
+
+                <TextView
+                    android:id="@id/expandable_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#666666"
+                    android:textSize="@dimen/font_16x" />
+
+                <ImageButton
+                    android:id="@+id/expand_collapse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|bottom"
+                    android:contentDescription="More/Less"
+                    android:background="@android:color/transparent"
+                    android:padding="16dp"
+                    tools:ignore="RtlHardcoded" />
+
+            </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+            <ImageView
+                android:id="@+id/iv_anime_image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/image_details_height"
+                android:layout_marginTop="@dimen/space_16x"
+                android:layout_marginBottom="@dimen/space_16x"
+                android:contentDescription="@null"
+                android:padding="0dp"
+                android:paddingStart="0dp"
+                android:paddingTop="0dp"
+                android:paddingEnd="0dp"
+                android:paddingBottom="0dp"
+                android:src="@drawable/not_available"
+                tools:ignore="HardcodedText" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_16x"
+                android:layout_marginEnd="@dimen/space_16x"
+                >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <com.google.android.material.checkbox.MaterialCheckBox
+                        android:id="@+id/likeBtn"
+                        style="@style/checkBoxStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="23dp"
+                        android:button="@drawable/like_btn_selector"
+                        android:contentDescription="Like"
+                        android:padding="0dp"
+                        app:buttonTint="@color/my_color_500"
+                        tools:ignore="HardcodedText" />
+
+                    <com.google.android.material.checkbox.MaterialCheckBox
+                        android:id="@+id/showComment"
+                        style="@style/checkBoxStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="comment"
+                        app:buttonTint="@color/my_color_500"
+                        android:button="@drawable/my_ic_comment"
+                        tools:ignore="HardcodedText" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_anime_year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0"
+                    android:text="00.00.0000"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

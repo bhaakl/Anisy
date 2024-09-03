@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fl_custview"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/tab_icon"
+        android:layout_width="52dp"
+        android:layout_height="@dimen/space_64x"
+        android:layout_gravity="center"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:contentDescription="@null"
+        android:src="@drawable/not_available"
+        />
+
+    <ImageView
+        android:id="@+id/video_icon_placeholder"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_video_play"
+        android:visibility="gone"
+        />
+</FrameLayout>

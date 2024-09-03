@@ -4,7 +4,7 @@ import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
-import com.bhaakl.newsapp.models.User
+import com.bhaakl.newsapp.domain.model.User
 import kotlinx.coroutines.flow.Flow
 
 @Dao

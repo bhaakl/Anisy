@@ -3,7 +3,7 @@ package com.bhaakl.newsapp.data.dao
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import com.bhaakl.newsapp.models.CalEventText
+import com.bhaakl.newsapp.domain.model.CalEventText
 import kotlinx.coroutines.flow.Flow
 
 @Dao

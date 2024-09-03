@@ -37,7 +37,7 @@
                 android:id="@+id/text_source"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="@color/sky"
+                android:textColor="@color/my_color_sky"
                 android:background="@color/shimmer_color"
                 android:maxLines="1"
                 android:layout_marginTop="6dp"

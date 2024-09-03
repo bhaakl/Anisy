@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.appbar.AppBarLayout android:id="@+id/header_layout"
+<com.google.android.material.appbar.AppBarLayout xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/header_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:backgroundTint="@color/white"
-    android:elevation="@dimen/space_8x"
-    android:fitsSystemWindows="true"
+    android:fitsSystemWindows="false"
+    app:liftOnScroll="true"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     app:layout_constraintEnd_toEndOf="parent"
@@ -15,12 +16,12 @@
         android:id="@+id/topAppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
         app:layout_scrollFlags="scroll|enterAlways|snap"
         app:layout_scrollEffect="compress"
-        android:minHeight="?attr/actionBarSize"
         app:title="@string/page_title"
         app:menu="@menu/top_app_bar"
-        app:navigationIcon="@drawable/ic_arrow_back_24" />
+        app:navigationIcon="@drawable/ic_arrow_back_24"/>
 
 </com.google.android.material.appbar.AppBarLayout>
 

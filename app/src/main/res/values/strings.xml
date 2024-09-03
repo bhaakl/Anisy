@@ -55,8 +55,13 @@
     <string name="sc_paragraph1">Приходить в 9.00 к 12 кабинету, с собой иметь паспорт, черные гелиевые ручки!</string>
 
 
+    <!--ANI-contents-->
     <string name="anime_aired">Aired: %1$s</string>
-    <string name="page_title">Animesh</string>
+    <string name="page_title">Anisy</string>
     <string name="more">More\n</string>
     <string name="favorite">Favorites</string>
+    <string name="tv_anime_about">About anime</string>
+
+    <string name="exp_group_title">Weekend: %1$s</string>
+    <string name="exp_group_subtitle">Tap on the header to expand.</string>
 </resources>
