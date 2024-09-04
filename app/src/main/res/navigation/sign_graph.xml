@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/signInFragment"
-        android:name="com.bhaakl.newsapp.presentation.ui.fragments.login.signIn.SignInFragment"
+        android:name="com.bhaakl.anisy.presentation.ui.fragments.login.signIn.SignInFragment"
         android:label="fragment_sign_in"
         tools:layout="@layout/fragment_sign_in">
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.bhaakl.newsapp.presentation.ui.fragments.login.signUp.SignUpFragment"
+        android:name="com.bhaakl.anisy.presentation.ui.fragments.login.signUp.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" >
         <action
@@ -27,7 +27,7 @@
 
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.bhaakl.newsapp.presentation.ui.fragments.main.profile.ProfileFragment"
+        android:name="com.bhaakl.anisy.presentation.ui.fragments.main.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
 

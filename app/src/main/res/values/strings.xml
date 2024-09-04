@@ -1,14 +1,6 @@
 <resources>
-    <string name="app_name">Animesh</string>
+    <string name="app_name">Anisy</string>
     <string name="api_key">23d877dbfbeb494cb1c656bd7fde770a</string>
-
-    <string name="no_internet">Please check your internet connection</string>
-    <string name="network_error">Network error, could\'t get data, please try again!</string>
-    <string name="unexpected_error">Unexpected error. Please try again later.</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >4 characters</string>
-    <string name="invalid_username_and_password">please check your username and password</string>
-    <string name="search_error">there is no such news name</string>
 
     <string name="news_details_preview">This is the post details, som/e text to test the appearance of the view</string>
     <string name="news_title_preview">This is the post name</string>

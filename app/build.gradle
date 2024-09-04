@@ -1,18 +1,21 @@
 plugins {
-    id 'com.android.application'
-    id 'com.google.devtools.ksp'
-    id 'com.google.gms.google-services'
-    id 'org.jetbrains.kotlin.android'
-    id 'kotlin-parcelize'
-    id 'com.google.dagger.hilt.android'
-    id 'org.jetbrains.kotlin.plugin.serialization'
-    id 'androidx.navigation.safeargs.kotlin'
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
+    // Ksp
+    id("com.google.devtools.ksp")
+    // Hilt
+    id("com.google.dagger.hilt.android")
+    // Navigation Safe Args
+    id("androidx.navigation.safeargs.kotlin")
+
+    id("com.google.gms.google-services")
+    id("kotlin-parcelize")
 }
 
 android {
     compileSdk rootProject.compileSdkVersion
     defaultConfig {
-        applicationId "com.bhaakl.newsapp"
+        applicationId "com.bhaakl.anisy"
         minSdk rootProject.minSdkVersion
         targetSdk rootProject.targetSdkVersion
         versionCode 1
@@ -63,7 +66,7 @@ android {
         enableAggregatingTask = true
     }*/
 
-    namespace 'com.bhaakl.newsapp'
+    namespace 'com.bhaakl.anisy'
 }
 
 ksp {
@@ -79,11 +82,19 @@ def getProperties(String key) {
 }
 
 dependencies {
-    // android support
+    implementation(project(":data"))
+    implementation(project(":domain"))
+
+    // Android support
     implementation "androidx.appcompat:appcompat:1.7.0"
 
     // Material Design Components
     implementation "com.google.android.material:material:1.12.0"
+
+    // Core/Kotlin
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+    implementation("androidx.core:core-ktx:1.13.1")
+    implementation("androidx.activity:activity-ktx:$activity_version")
 
     // UI Components
     implementation "androidx.constraintlayout:constraintlayout:2.1.4"
@@ -100,22 +111,13 @@ dependencies {
     // ViewBindingPropertyDelegate | | To use only without reflection variants of viewBinding
     implementation "com.github.kirich1409:viewbindingpropertydelegate-noreflection:1.5.6"
 
-    // core/kotlin
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.1")
-    implementation("androidx.core:core-ktx:1.13.1")
-    implementation("androidx.activity:activity-ktx:$activity_version")
-
-    // Coroutine Lifecycle Scopes
+    // Lifecycle Scopes
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version")
 
     // db and auth
     implementation "com.google.firebase:firebase-auth-ktx:22.0.0"
     implementation "com.google.firebase:firebase-database:21.0.0"
-    implementation "androidx.room:room-ktx:$room_version"
-    implementation "androidx.room:room-runtime:$room_version"
-    ksp "androidx.room:room-compiler:$room_version"
 
     /**-------------------testing libs------------------------------------------**/
     testImplementation "junit:junit:4.13.2"
@@ -123,29 +125,12 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:3.6.1"
     /**-------------------------------------------------------------**/
 
-    // retrofit
-    implementation "com.squareup.retrofit2:retrofit:2.9.0"
-    implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0")
-//    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
-    implementation("com.squareup.okhttp3:logging-interceptor:4.9.3")
-
-    // paging
-    api("androidx.paging:paging-runtime-ktx:$paging_version")
-    implementation "androidx.paging:paging-common-android:$paging_version"
-
-
     // Hilt
     implementation "com.google.dagger:hilt-android:$hilt_version"
     ksp "com.google.dagger:hilt-android-compiler:$hilt_version"
     // Для использования Hilt в тестах
 //    androidTestImplementation "com.google.dagger:hilt-android-testing:$hilt_version"
 //    kspAndroidTest "com.google.dagger:hilt-android-compiler:$hilt_version"
-
-    // mapping
-    implementation 'org.mapstruct:mapstruct:1.5.5.Final'
-    annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
-    // for test
-//    testAnnotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
 
     // other
     implementation "com.facebook.shimmer:shimmer:0.5.0"

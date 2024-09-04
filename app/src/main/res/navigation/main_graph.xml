@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.bhaakl.newsapp.presentation.ui.fragments.main.home.HomeFragment"
+        android:name="com.bhaakl.anisy.presentation.ui.fragments.main.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home"/>
 
     <fragment
         android:id="@+id/navigation_schedule"
-        android:name="com.bhaakl.newsapp.presentation.ui.fragments.main.schedule.ScheduleFragment"
+        android:name="com.bhaakl.anisy.presentation.ui.fragments.main.schedule.ScheduleFragment"
         android:label="fragment_history"
         tools:layout="@layout/fragment_schedule" />
 
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.bhaakl.newsapp.presentation.ui.fragments.main.profile.ProfileFragment"
+        android:name="com.bhaakl.anisy.presentation.ui.fragments.main.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
 
